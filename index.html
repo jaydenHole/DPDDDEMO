@@ -43,6 +43,12 @@
 	
 	var mBlock = L.marker([51.12965, -2.73257]).addTo(mymap);
 	mBlock.bindPopup("<img style='width: 300px' src='mBlock.jpg'/><b>M Block</b><br>Strode College").openPopup();
+	    
+	var polygon = L.polygon([
+    [51.12465, -2.73257],
+    [51.12965, -2.73657],
+    [51.12265, -2.73457]
+]).addTo(mymap);
 	
 	var baseMaps = {
            "OSM": osm,
