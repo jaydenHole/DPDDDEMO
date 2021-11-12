@@ -49,20 +49,20 @@
     [51.130394, -2.73426]
 ]).addTo(mymap);		
 		
-	var dPoly = L.polygon([
-    [51.130293, -2.734051],
-    [51.130293, -2.733772],
-    [51.130168, -2.733863],
-    [51.130168, -2.73426]
-]).addTo(mymap);		
-	    
       	var aPoly = L.polygon([
     [51.130216, -2.733616],
+    [51.130667, -2.733616],
     [51.130667, -2.733251],
-    [51.130667, -2.733251],
-    [51.130216, -2.733616]
+    [51.130216, -2.733251]
 ]).addTo(mymap);				
 
+      	var dPoly = L.polygon([
+    [51.13032, -2.73404],
+    [51.13032, -2.733874],
+    [51.130168, -2.733874],
+    [551.130168, -2.73404]
+]).addTo(mymap);					    
+	    
       	var cPoly = L.polygon([
     [51.130111, -2.733675],
     [51.130111, -2.732935],
@@ -103,7 +103,6 @@
 	mPoly.bindPopup("<img style='width: 300px' src='mBlock.jpg'/><b>M Block</b><br>Strode College").openPopup();		
         jPoly.bindPopup("<img style='width: 300px' src='jBlock.jpg'/><b>J Block</b><br>Strode College").openPopup();       		
         ePoly.bindPopup("<img style='width: 300px' src='eBlock.jpg'/><b>E Block</b><br>Strode College").openPopup();		
-        dPoly.bindPopup("<img style='width: 300px' src='dBlock.jfif'/><b>E Block</b><br>Strode College").openPopup();		
 	    
 var popup = L.popup();
 
