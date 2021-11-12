@@ -127,12 +127,13 @@ var LeafIcon = L.Icon.extend({
         popupAnchor:  [-3, -76]
     }
 });
-var greenIcon = new LeafIcon({iconUrl: 'Strode.png'}),
+var greenIcon = new LeafIcon({iconUrl: 'Strode.png'});
 L.icon = function (options) {
     return new L.Icon(options);
 };
 L.marker([51.5, -0.09], {icon: greenIcon}).addTo(map).bindPopup("I am a green leaf.");	    
 	    
+	    	 
 mymap.on('click', onMapClick);
 	    
 	var baseMaps = {
@@ -147,6 +148,7 @@ mymap.on('click', onMapClick);
         };
 
         L.control.layers(baseMaps, overlayMaps).addTo(mymap);
+	
 	
 	mymap.addControl(new L.Control.Fullscreen());
 	L.control.mousePosition().addTo(mymap);
