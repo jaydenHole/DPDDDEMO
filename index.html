@@ -13,7 +13,7 @@
   <body>
      <div id="map" style="width:100%; height:800px;"></div>
     <script>
-     var mymap = L.map('map').setView([51.505, -0.09], 13);
+     var mymap = L.map('map').setView([51.129923, -2.732452], 18);
       
      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
@@ -21,12 +21,8 @@
     id: 'mapbox/streets-v11',
     tileSize: 512,
     zoomOffset: -1,
-    accessToken: 'your.mapbox.access.token'
-}).addTo(mymap);
-      var tor = L.marker([51.14471, -2.69866]).addTo(mymap);   
-	tor.bindPopup("<img style='width: 300px' src='tor.jpg'/><br /><b>Glastonbury Tor</b>").openPopup();
-	
-	var aBlock = L.marker([51.13029, -2.73303]).addTo(mymap);
+}).addTo(mymap);	
+	var aBlock = L.marker([51.130391, -2.733423]).addTo(mymap);
 	aBlock.bindPopup("<img style='width: 300px' src='aBlock.jpg'/><b>A Block</b><br>Strode College").openPopup();
 	
 	var bBlock = L.marker([51.13047, -2.73402]).addTo(mymap);
@@ -43,7 +39,86 @@
 	
 	var mBlock = L.marker([51.12965, -2.73257]).addTo(mymap);
 	mBlock.bindPopup("<img style='width: 300px' src='mBlock.jpg'/><b>M Block</b><br>Strode College").openPopup();
+	    
+	var dBlock = L.marker([51.130242, -2.733954]).addTo(mymap);
+	dBlock.bindPopup("<img style='width: 300px' src='dBlock.jfif'/><b>D Block</b><br>Strode College").openPopup();
+	    
+	    
+	    
+	var bPoly = L.polygon([
+    [51.130566, -2.73426],
+    [51.130566, -2.733772],
+    [51.130394, -2.733772],
+    [51.130394, -2.73426]
+]).addTo(mymap);		
+		
+      	var aPoly = L.polygon([
+    [51.130216, -2.733616],
+    [51.130667, -2.733616],
+    [51.130667, -2.733251],
+    [51.130216, -2.733251]
+]).addTo(mymap);				
+
+      	var dPoly = L.polygon([
+    [51.13032, -2.73404],
+    [51.13032, -2.733874],
+    [51.130168, -2.733874],
+    [51.130168, -2.73404]
+]).addTo(mymap);					    
+	    
+      	var cPoly = L.polygon([
+    [51.130111, -2.733675],
+    [51.130111, -2.732935],
+    [51.129818, -2.73294],
+    [51.129818, -2.733337],
+    [51.129694, -2.733337],
+    [51.129694, -2.733675]
+]).addTo(mymap);	    
+	   
+      	var mPoly = L.polygon([
+    [51.129838, -2.732726],
+    [51.129838, -2.732447],
+    [51.129421, -2.732447],
+    [51.129421, -2.732726]
+]).addTo(mymap);		
+
+      	var jPoly = L.polygon([
+    [51.129586, -2.732345],
+    [51.129586, -2.731739],
+    [51.129418, -2.731739],
+    [51.129418, -2.732345]	
+]).addTo(mymap);				
+				
+      	var ePoly = L.polygon([
+    [51.12932, -2.732275],
+    [51.12932, -2.731991],
+    [51.129377, -2.731991],
+    [51.129377, -2.731658],
+    [51.128973, -2.731658],
+    [51.128973, -2.731985],
+    [51.129132, -2.731985],
+    [51.129132, -2.732259]
+]).addTo(mymap);
 	
+	bPoly.bindPopup("<img style='width: 300px' src='bBlock.jpg'/><b>B Block</b><br>Strode College").openPopup();
+	aPoly.bindPopup("<img style='width: 300px' src='aBlock.jpg'/><b>A Block</b><br>Strode College").openPopup();		
+        cPoly.bindPopup("<img style='width: 300px' src='cBlock.jpg'/><b>C Block</b><br>Strode College").openPopup();		
+	mPoly.bindPopup("<img style='width: 300px' src='mBlock.jpg'/><b>M Block</b><br>Strode College").openPopup();		
+        jPoly.bindPopup("<img style='width: 300px' src='jBlock.jpg'/><b>J Block</b><br>Strode College").openPopup();       		
+        ePoly.bindPopup("<img style='width: 300px' src='eBlock.jpg'/><b>E Block</b><br>Strode College").openPopup();
+	dPoly.bindPopup("<img style='width: 300px' src='dBlock.jfif'/><b>D Block</b><br>Strode College").openPopup();
+	    
+var popup = L.popup();
+
+function onMapClick(e) {
+    popup
+        .setLatLng(e.latlng)
+        .setContent("You clicked the map at " + e.latlng.toString())
+        .openOn(mymap);
+}
+
+mymap.on('click', onMapClick);
+	    
 	var baseMaps = {
            "OSM": osm,
            "Google": google
