@@ -115,8 +115,16 @@ function onMapClick(e) {
         .setLatLng(e.latlng)
         .setContent("You clicked the map at " + e.latlng.toString())
         .openOn(mymap);
-}
+}  
+	    
+var strodeIcon = new LeafIcon({iconUrl: 'Strode.png'}),
+    
+L.icon = function (options) {
+    return new L.Icon(options);
+};
+L.marker([51.130667, -2.732731], {icon: strodeIcon}).addTo(map).bindPopup("I am a green leaf.");
 
+	    
 mymap.on('click', onMapClick);
 	    
 	var baseMaps = {
