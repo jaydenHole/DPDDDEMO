@@ -137,6 +137,8 @@ function onMapClick(e) {
 	    	 
 mymap.on('click', onMapClick);
 	    
+	    var college = L.layerGroup([marker, marker1]).addTo(mymap);
+	    
 	var baseMaps = {
            "OSM": osm,
            "Google": google
