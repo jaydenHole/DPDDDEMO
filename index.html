@@ -116,7 +116,16 @@ function onMapClick(e) {
         .setContent("You clicked the map at " + e.latlng.toString())
         .openOn(mymap);
 }  
-	    
+var LeafIcon = L.Icon.extend({
+    options: {
+        shadowUrl: 'strode.png',
+        iconSize:     [38, 95],
+        shadowSize:   [50, 64],
+        iconAnchor:   [22, 94],
+        shadowAnchor: [4, 62],
+        popupAnchor:  [-3, -76]
+    }
+});	    
 var strodeIcon = new LeafIcon({iconUrl: 'Strode.png'}),
     
 L.icon = function (options) {
