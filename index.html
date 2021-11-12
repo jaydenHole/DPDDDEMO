@@ -118,7 +118,7 @@ function onMapClick(e) {
 }  
 var LeafIcon = L.Icon.extend({
     options: {
-        shadowUrl: 'strode.png',
+        shadowUrl: 'Strode.png',
         iconSize:     [38, 95],
         shadowSize:   [50, 64],
         iconAnchor:   [22, 94],
@@ -131,7 +131,7 @@ var strodeIcon = new LeafIcon({iconUrl: 'Strode.png'}),
 L.icon = function (options) {
     return new L.Icon(options);
 };
-L.marker([51.130667, -2.732731], {icon: strodeIcon}).addTo(map).bindPopup("I am a green leaf.");
+L.marker([51.130667, -2.732731], {icon: LeafIcon}).addTo(map).bindPopup("I am a green leaf.");
 
 	    
 mymap.on('click', onMapClick);
