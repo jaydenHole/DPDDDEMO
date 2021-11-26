@@ -71,6 +71,7 @@
 	var dBlock = L.marker([51.130242, -2.733954]).addTo(mymap);
 	dBlock.bindPopup("<img style='width: 300px' src='dBlock.jfif'/><b>D Block</b><br>Strode College").openPopup();
 	    
+	    var college = L.layerGroup([aBlock, bBlock, cBlock, eBlock, jBlock, mBlock, dBlock]).addTo(mymap);
 	    
 	    
 	var bPoly = L.polygon([
