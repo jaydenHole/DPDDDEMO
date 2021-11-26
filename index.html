@@ -157,6 +157,7 @@ mymap.on('click', onMapClick);
             "Tor": tor,
             "College": college
         };
+       	    var college = L.layerGroup([marker, marker1]).addTo(mymap);
 
         L.control.layers(baseMaps, overlayMaps).addTo(mymap);
 	L.control.mousePosition().addTo(mymap);
